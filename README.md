@@ -20,5 +20,5 @@ Here is a sample of the validation data:
 ![Outside](results/2021_7_18__12AM/outside_sample.jpg)
 
 ### Notes
-The fonts we used + the outside images test aren't ours <br>
+The fonts we used + the outside images test + the text in the images aren't ours <br>
 I am not the one who named نسخ to Nask, or even worse رقعة to Ruqa!
