@@ -10,7 +10,7 @@ We used various computer fonts of Nask (نسخ) and Ruqa (رقعة)) and took pi
 
 ##### Train
 Here is a sample of the training data:
-![Train](results/2021_7_18__12AM/training_sample.png)
+![Train](results/2021_7_18__12AM/train_sample.png)
 
 ##### Validation
 Here is a sample of the validation data:
@@ -18,3 +18,7 @@ Here is a sample of the validation data:
 
 ##### Outside samples
 ![Outside](results/2021_7_18__12AM/outside_sample.jpg)
+
+### Notes
+The fonts we used + the outside images test aren't ours <br>
+I am not the one who named نسخ to Nask or even worse, رقعة) to Ruqa 
