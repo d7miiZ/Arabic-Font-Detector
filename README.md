@@ -21,4 +21,4 @@ Here is a sample of the validation data:
 
 ### Notes
 The fonts we used + the outside images test + the text in the images aren't ours <br>
-I am not the one who named نسخ to Nask, or even worse رقعة to Ruqa!
+I am not the one who named نسخ to Nask, or even worse رقعة to Ruqa!.
