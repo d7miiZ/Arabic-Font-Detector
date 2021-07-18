@@ -17,7 +17,7 @@ Here is a sample of the validation data:
 ![Validation](results/2021_7_18__12AM/test_sample.png)
 
 ##### Outside samples
-![Outside](results/2021_7_18__12AM/outside_sample.jpg)
+![Outside](results/2021_7_18__12AM/outside_sample.png)
 
 ### Notes
 The fonts we used + the outside images test + the text in the images aren't ours <br>
