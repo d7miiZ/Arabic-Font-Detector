@@ -15,6 +15,7 @@ import nask3 from "../assets/nask3.png";
 import ruqa from "../assets/ruqa.png";
 import ruqa2 from "../assets/ruqa2.png";
 import ruqa3 from "../assets/ruqa3.jpg";
+import { Container } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -226,14 +227,14 @@ export const Demo = () => {
           </div>
         </div>
         {UploadedImage !== null && (
-          <div>
+          <Container maxWidth="sm">
             <h4>Uploaded Image: </h4>
             <img
               className={styles.PredImg}
               src={URL.createObjectURL(UploadedImage)}
               alt={"sry"}
             ></img>
-          </div>
+          </Container>
         )}
       </div>
     </>
