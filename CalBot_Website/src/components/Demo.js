@@ -11,7 +11,6 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import styles from "./Demo.module.css";
 
 import nask from "../assets/nask.png";
-import nask2 from "../assets/nask2.png";
 import nask3 from "../assets/nask3.png";
 import ruqa from "../assets/ruqa.png";
 import ruqa2 from "../assets/ruqa2.png";
@@ -35,11 +34,6 @@ const itemData = [
     img: nask,
     title: "nask",
     key: 1,
-  },
-  {
-    img: nask2,
-    title: "nask2",
-    key: 2,
   },
   {
     img: nask3,
@@ -67,14 +61,18 @@ export const Demo = () => {
   const [LastId, SetLastId] = useState(0);
   const [sample, SetSample] = useState("");
   const [prediction, SetPrediction] = useState("");
+  const [UploadedImage, SetUploadedImage] = useState(null);
   const [loading, SetLoading] = useState(false);
   const [show, SetShow] = useState(false);
 
   const classes = useStyles();
 
   const onHide = () => {
-    document.getElementById(LastId).classList.remove(styles.selected);
+    if (LastId !== 0) {
+      document.getElementById(LastId).classList.remove(styles.selected);
+    }
     SetSample("");
+    SetUploadedImage(null);
     SetLastId(0);
     SetShow(false);
   };
@@ -124,20 +122,49 @@ export const Demo = () => {
     });
   };
 
-  const onDropAccepted = useCallback((acceptedFiles) => {}, []);
+  const PredUploadedImg = () => {
+    SetLoading(true);
+    let formData = new FormData();
+    formData.append("image", UploadedImage);
 
-  const onDropRejected = useCallback((rejectedFiles) => {}, []);
+    fetch("/api/calbot/predict", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((pred) => {
+        SetPrediction(pred.pred);
+        SetLoading(false);
+        SetShow(true);
+      });
+  };
+
+  const onDropAccepted = useCallback((acceptedImage) => {
+    SetUploadedImage(acceptedImage[0]);
+  }, []);
 
   const { getRootProps, getInputProps, open } = useDropzone({
     accept: ".png, .jpg, .jpeg",
     noClick: true,
     noKeyboard: true,
     onDropAccepted,
-    onDropRejected,
+    maxFiles: 1,
   });
 
   const SampleBtn = !loading ? (
     <Button variant="contained" className={styles.PredBtn} onClick={PredSample}>
+      Predict
+    </Button>
+  ) : (
+    <CircularProgress className={styles.margin}></CircularProgress>
+  );
+
+  const UploadBtn = !loading ? (
+    <Button
+      variant="contained"
+      className={styles.PredBtn}
+      onClick={PredUploadedImg}
+    >
       Predict
     </Button>
   ) : (
@@ -149,7 +176,11 @@ export const Demo = () => {
       {show && (
         <Modal onClose={onHide} classes={styles.modal}>
           <h4>Predicted Image:</h4>
-          <img src={sample} className={styles.PredImg}></img>
+          <img
+            src={sample === "" ? URL.createObjectURL(UploadedImage) : sample}
+            className={styles.PredImg}
+            alt={"sry"}
+          ></img>
           <h3>CalBot Preditcion: {prediction}</h3>
           <Button variant="contained" onClick={onHide}>
             Close
@@ -191,8 +222,19 @@ export const Demo = () => {
             <p style={{ padding: "20px" }}>
               ( Only *.jpg *.jpeg *.png will be accepted )
             </p>
+            {UploadedImage !== null && UploadBtn}
           </div>
         </div>
+        {UploadedImage !== null && (
+          <div>
+            <h4>Uploaded Image: </h4>
+            <img
+              className={styles.PredImg}
+              src={URL.createObjectURL(UploadedImage)}
+              alt={"sry"}
+            ></img>
+          </div>
+        )}
       </div>
     </>
   );

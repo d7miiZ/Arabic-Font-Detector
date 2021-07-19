@@ -1,12 +1,12 @@
-.card{
-    width: 70%;
-    height: 300px;
-    padding: 1%;
-    background-color: #E5E9F0;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.card {
+  width: 70%;
+  height: 300px;
+  padding: 1%;
+  background-color: #e5e9f0;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.link{
-    text-decoration: none;
+.link {
+  text-decoration: none;
 }
