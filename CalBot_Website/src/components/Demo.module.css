@@ -1,0 +1,17 @@
+.drop {
+   width: 50%;
+    border: 2px #2E3440 solid;
+    border-style: dashed;
+    border-radius: 25px;
+    padding-top: 33px;
+}
+
+.DropContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selected{
+    background: darkslategrey !important;
+}
