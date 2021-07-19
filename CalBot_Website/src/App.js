@@ -1,8 +1,8 @@
-import './App.css';
-import Description from './components/Description';
-import MainSection from './components/MainSection';
-import Demo from "./components/Demo"
-import Footer from './components/Footer';
+import "./App.css";
+import Description from "./components/Description";
+import MainSection from "./components/MainSection";
+import Demo from "./components/Demo";
+import Footer from "./UI/Footer";
 
 function App() {
   return (
