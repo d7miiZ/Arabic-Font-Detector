@@ -80,19 +80,22 @@ const useStyles = makeStyles((theme) => ({
       }
       SetLastId(id)
 
-      const req = await fetch("/api/calbot/test" , {
-        method: "POST",
-        headers : { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-         },
-        body: JSON.stringify({
-          test: 1
-        })
+      fetch(nask)
+      .then(async response => {
+        const contentType = response.headers.get('content-type')
+        const blob = await response.blob()
+        const file = new File([blob], nask, { contentType })
+        
+        let formData = new FormData();
+        formData.append('image', file);
+
+        fetch("/api/calbot/predict" , {
+            method: "POST",
+            body: formData,
+        }).then(o => o.json()).then(console.log)
       })
 
       
-      console.log(req.text())
     }
 
     const onDropAccepted = useCallback(
