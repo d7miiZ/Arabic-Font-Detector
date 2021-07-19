@@ -1,5 +1,5 @@
 # Arabic-Font-Detector
-This model detects arabic fonts (نسخ, رقعة، كوفي) given a picture of the text
+This model detects arabic fonts (نسخ, رقعة) given a picture of the text
 <br>
 Built using Pytorch and kids stories. 
 
