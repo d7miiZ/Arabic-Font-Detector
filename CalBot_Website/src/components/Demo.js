@@ -80,15 +80,19 @@ const useStyles = makeStyles((theme) => ({
       }
       SetLastId(id)
 
-      const req = await fetch("https://arabic-caligraphy-classifier.herokuapp.com/api/calbot/predict" , {
+      const req = await fetch("/api/calbot/test" , {
         method: "POST",
-        body: {
-          image: event.target.src
-        }
+        headers : { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+         },
+        body: JSON.stringify({
+          test: 1
+        })
       })
 
-      const res = await req.json();
-      console.log(res)
+      
+      console.log(req.text())
     }
 
     const onDropAccepted = useCallback(
