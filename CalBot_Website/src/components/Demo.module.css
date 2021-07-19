@@ -15,3 +15,7 @@
 .selected{
     background: darkslategrey !important;
 }
+
+.clickable{
+    cursor: pointer;
+}

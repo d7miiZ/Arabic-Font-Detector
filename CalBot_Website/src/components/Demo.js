@@ -124,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
         </ImageListItem>
         {itemData.map((item) => (
           <ImageListItem key={item.key}>
-            <img src={item.img} alt={item.title}  onClick={PredSample} data-key={item.key}/>
+            <img className={styles.clickable} src={item.img} alt={item.title}  onClick={PredSample} data-key={item.key}/>
             <ImageListItemBar 
               id={`${item.key}`}
               title={item.title}
