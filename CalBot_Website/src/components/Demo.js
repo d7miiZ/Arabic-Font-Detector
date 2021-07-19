@@ -1,14 +1,15 @@
 import { useDropzone } from "react-dropzone";
 import { useCallback, useState } from "react";
-import Button from "@material-ui/core/Button";
+import Modal from "../UI/Modal";
 import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
 import ImageListItemBar from "@material-ui/core/ImageListItemBar";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import CircularProgress from "@material-ui/core/CircularProgress";
-
 import styles from "./Demo.module.css";
+
 import nask from "../assets/nask.png";
 import nask2 from "../assets/nask2.png";
 import nask3 from "../assets/nask3.png";
@@ -67,8 +68,16 @@ export const Demo = () => {
   const [sample, SetSample] = useState("");
   const [prediction, SetPrediction] = useState("");
   const [loading, SetLoading] = useState(false);
+  const [show, SetShow] = useState(false);
 
   const classes = useStyles();
+
+  const onHide = () => {
+    document.getElementById(LastId).classList.remove(styles.selected);
+    SetSample("");
+    SetLastId(0);
+    SetShow(false);
+  };
 
   const ChooseSample = (event) => {
     const id = event.target.getAttribute("data-key");
@@ -109,9 +118,10 @@ export const Demo = () => {
         .then((res) => res.json())
         .then((pred) => {
           SetPrediction(pred.pred);
+          SetLoading(false);
+          SetShow(true);
         });
     });
-    SetLoading(false);
   };
 
   const onDropAccepted = useCallback((acceptedFiles) => {}, []);
@@ -136,6 +146,16 @@ export const Demo = () => {
 
   return (
     <>
+      {show && (
+        <Modal onClose={onHide} classes={styles.modal}>
+          <h4>Predicted Image:</h4>
+          <img src={sample} className={styles.PredImg}></img>
+          <h3>CalBot Preditcion: {prediction}</h3>
+          <Button variant="contained" onClick={onHide}>
+            Close
+          </Button>
+        </Modal>
+      )}
       <h3>Demo:</h3>
       <p>Choose one of the sample images to see the model prediction!</p>
       <div className={classes.root}>

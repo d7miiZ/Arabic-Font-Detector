@@ -25,6 +25,15 @@
   width: 18% !important;
 }
 
-.margin{
-    margin: 15px 0px;
+.margin {
+  margin: 15px 0px;
+}
+
+.PredImg {
+  width: 50%;
+  height: 50%;
+}
+
+.modal {
+  text-align: center;
 }
