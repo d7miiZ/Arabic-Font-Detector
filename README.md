@@ -2,7 +2,9 @@
 This model detects arabic fonts (نسخ, رقعة) given a picture of the text
 <br>
 Built using Pytorch and kids stories. 
-
+<br>
+Visit the site! https://d7miiz.github.io/Arabic-Font-Detector-Website/
+<!-- 
 ### Data
 We used various computer fonts of Nask (نسخ) and Ruqa (رقعة)) and took pictures of those then spliced them up and fed them to a convolutional neural network. The models are under the <code>Results</code> folder. The data is too large for github so open an issue and we'll supply them. 
 
@@ -15,10 +17,11 @@ Here is a sample of the training data (the training data has been augmented, see
 ##### Validation
 Here is a sample of the validation data:
 ![Validation](results/2021_7_18__6AM/test_sample.png)
-
+ -->
 ##### Outside samples
 ![Outside](results/2021_7_18__6AM/outside_sample.png)
-
+<!-- 
 ### Notes
 The fonts we used + the outside images test + the text in the images aren't ours <br>
 I am not the one who named نسخ to Nask, or even worse رقعة to Ruqa!.
+ -->
