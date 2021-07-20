@@ -16,8 +16,8 @@ export const MainSection = () => {
           We opted to generate our training samples from computer fonts. The problem with generating data is that the model tends to memorize the fonts 
             we trained it with and not generalize to all variations of the font. Thankfully this can be relieved by applying random transfomations on the images
             like skewing, cropping, bluring, etc.
-          We used 7 different fonts for training the model (4 Nask, 3 Ruqa). We used fonts from <a target="_blank" href="https://arbfonts.com/arabic_fonts">here</a> and 
-          from <a target="_blank" href="https://www.arfonts.net/">here</a>. Then sampled a text from <a target="_blank" href="https://mawdoo3.com/">here</a>. 
+          We used 7 different fonts for training the model (4 Nask, 3 Ruqa). We used fonts from <a target="_blank" href="https://arbfonts.com/arabic_fonts"  rel="noreferrer">here</a> and 
+          from <a target="_blank" href="https://www.arfonts.net/"  rel="noreferrer">here</a>. Then sampled a text from <a target="_blank" href="https://mawdoo3.com/"  rel="noreferrer">here</a>. 
           After that we started generating images (~500 images), each seven lines long. We cut each image to smaller 200x200 chunks and store them for training.
         </p>
       </Container>
