@@ -181,7 +181,7 @@ export const Demo = () => {
           </Button>
         </Modal>
       )}
-      <h2 style={{margin: "2em"}}>See the model in action by choosing an sample image</h2>
+      <h2 style={{margin: "2em"}}>See the model in action by choosing a sample image</h2>
       <div className={classes.root}>
         <ImageList rowHeight={180} cols={matches ? 3 : 2} className={classes.imageList}>
           {/* <ImageListItem key="Subheader" cols={2} style={{ height: "auto" }}> // Why is this an item??
@@ -202,7 +202,7 @@ export const Demo = () => {
         </ImageList>
       </div>
       <div className={styles.DropContainer}>
-        <h2 style={{margin: "1em"}}>Or upload your own images</h2>
+        <h2 style={{margin: "1em"}}>Or upload your own image</h2>
         <div className={styles.drop}>
           <div {...getRootProps({ className: "dropzone" })}>
             <input {...getInputProps()} />
