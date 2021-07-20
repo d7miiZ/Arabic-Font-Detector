@@ -1,5 +1,12 @@
 .text {
-  padding: 1%;
+  padding: 1em;
+  text-align: left;
+  letter-spacing: 0.1em;
+  word-spacing: 0.02em; 
+}
+
+.h3 {
+  font-family: monospace;
 }
 
 .ResultsImg {

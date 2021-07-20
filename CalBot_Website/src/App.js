@@ -7,11 +7,11 @@ import Footer from "./UI/Footer";
 function App() {
   return (
     <div className="App">
-      <h1>CalBot</h1>
-      <Description></Description>
-      <MainSection></MainSection>
-      <Demo></Demo>
-      <Footer></Footer>
+      <code style={{fontSize: "7em", fontFamily: "monospace", letterSpacing: "0.1em", fontWeight: ""}}>CALBOT</code>
+      <Description/>
+      <MainSection/>
+      <Demo/>
+      <Footer/>
     </div>
   );
 }

@@ -46,6 +46,8 @@ export const MainSection = () => {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
+      </Container>
+      <Container maxWidth="md">
         <img src={Resluts} className={styles.ResultsImg} alt={"sry"}></img>
       </Container>
     </section>
