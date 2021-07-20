@@ -37,3 +37,13 @@
 .modal {
   text-align: center;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .drop {
+    width: inherit;
+    border: 2px #2e3440 solid;
+    border-style: dashed;
+    border-radius: 25px;
+    padding-top: 33px;
+  }
+}
