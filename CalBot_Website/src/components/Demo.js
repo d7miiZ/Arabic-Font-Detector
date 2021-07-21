@@ -152,7 +152,6 @@ export const Demo = () => {
     <Button
       size="large"
       variant="contained"
-      className={styles.PredBtn}
       onClick={predUploadedImg}
     >
       Predict
@@ -182,7 +181,7 @@ export const Demo = () => {
       )}
       <h2 style={{margin: "2em"}}>See the model in action by choosing a sample image</h2>
       <div className={classes.root}>
-        <ImageList rowHeight={180} cols={matches ? 3 : 2} className={classes.imageList}>
+        <ImageList rowHeight={180} cols={matches ? 3 : 2} className={classes.imageList} style={{padding: "0px"}}>
           {/* <ImageListItem key="Subheader" cols={2} style={{ height: "auto" }}> // Why is this an item??
             <ListSubheader component="div">samples</ListSubheader>
           </ImageListItem> */}

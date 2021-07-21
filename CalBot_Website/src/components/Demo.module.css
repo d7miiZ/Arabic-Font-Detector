@@ -20,11 +20,6 @@
   cursor: pointer;
 }
 
-.PredBtn {
-  margin: 20px 0px !important;
-  width: 18% !important;
-}
-
 .margin {
   margin: 15px 0px;
 }
@@ -40,7 +35,7 @@
 
 @media (min-width: 320px) and (max-width: 480px) {
   .drop {
-    width: inherit;
+    width: 90%;
     border: 2px #2e3440 solid;
     border-style: dashed;
     border-radius: 25px;
